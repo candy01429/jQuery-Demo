@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            p{
+                background-color: yellow;
+                border:solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <p id="p1">
+                - This is <font id="f1" color="red">paragraph 1</font> -
+            </p>
+            <p id="p2">
+                - This is <font id="f2" color="blue">paragraph 2</font> -
+            </p>
+        </div>
+        <br>
+        <button id="myButton">click me</button>
+        <script>
+            $('#myButton').click(function () {
+                $('#p1').empty(); // 僅清空內容,可以看到<p>元素的邊線尚存
+                $('#p1').remove(); // 移除元素
+            });
+        </script>
+    </body>
+</html>

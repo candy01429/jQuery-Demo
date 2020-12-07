@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <p id="p1">
+                - This is <font id="f1" color="red">paragraph 1</font> -
+            </p>
+            <p id="p2">
+                - This is <font id="f2" color="blue">paragraph 2</font> -
+            </p>
+        </div>
+        <br>
+        <button id="myButton">click me</button>
+        <br>
+        <script>
+            $('#myButton').click(function () {
+                alert($('div').html()); //getter // .html()似innerHTML屬性
+                $('div').html('<b>Hello World</b>'); // setter
+            });
+
+        </script>
+
+        <button id="myButton2">click me</button>
+        <br>
+        <script>
+            $('#myButton2').click(function () {
+                alert($('div').text()); //getter // .text()似innerText屬性
+                $('div').text('<b>Hello World</b>'); // setter
+            });
+        </script>
+    </body>
+</html>

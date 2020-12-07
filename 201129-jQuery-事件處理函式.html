@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            p{background-color: yellow;}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <p id="p1">- This is paragraph 1 -</p>
+            <p id="p2">- This is paragraph 2 -</p>
+            <p id="p3">- This is paragraph 3 -</p>
+        </div>
+        <br>
+        <button id = "myButton">click paragraph 2</button>
+        <script>
+            // 不帶參數的函式,目的在"觸發"事件
+            // 帶參數的函式,目的在"綁定"事件,無法觸發
+            $('p').click(function () {
+                // 事件處理函式中的this為被觸發的"DOM元素"
+                $(this).css('background-color', 'red');
+            });
+            $('#myButton').click(function () {// 帶參數目的為綁定事件處理函式
+                $('#p2').click(); //不帶參數目的為觸發事件
+            });
+        </script>
+    </body>
+</html>

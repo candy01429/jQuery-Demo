@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            p{background-color: lightyellow;}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <p id="p1">
+                - This is <font id="f1" color="red">paragraph 1</font> -
+            </p>
+            <p id="p2">
+                - This is <font id="f2" color="blue">paragraph 2</font> -
+            </p>
+        </div>
+        <br>
+        <button id="myButton">click me</button>
+
+        <script>
+            // clone()複製選取元素
+            $('#f1').clone().appendTo('#p2'); //複製#f1並插入#p2內部後方
+            alert($('#container').html());
+        </script>
+    </body>
+</html>

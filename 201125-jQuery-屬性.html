@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <textarea rows="10" cols="50" id="ta01" placeholder="textarea test">          
+        </textarea>
+        <br>
+        <button id="myButton">click me</button>
+        <script>
+            // attr()取得元素屬性
+            // removeAttr()移除元素屬性
+            $('#myButton').click(function(){
+                // 取得屬性(只有key值,是getter)
+                alert('before...' + $('#ta01').attr('placeholder'));
+                // 改變屬性(key/value,是setter)
+                $('#ta01').attr('placeholder','placeholder is changed');
+                // 取得並確認屬性
+                alert('after...' + $('#ta01').attr('placeholder'))
+                // 以指定key/value的方式，同時修改多組屬性
+                $('#ta01').attr({
+                    rows: "5",
+                    cols: "100"
+                });
+                // remove
+                $('#ta01').removeAttr('maxlength')
+            });                 
+        </script>
+    </body>
+</html>

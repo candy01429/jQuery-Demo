@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            /*class selector*/
+            .myColor{
+                background-color: red;
+            }
+            .myFont{
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="mp" class="myFont">test</p>
+        <button id="myButton1">add class</button>
+        <button id="myButton2">remove class</button>
+        <script>
+            $('myButton1').click(function () {
+                $('#mp').addClass('myColor'); //保留myFont,再加上myColor
+                // $('#mp').attr('class','myColor'); //以color取代myFont
+            });
+            $('myButton2').click(function () {
+                $('#mp').removeClass('myColor');
+            });
+        </script>
+    </body>
+</html>

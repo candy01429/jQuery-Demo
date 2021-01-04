@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            p{background-color:yellow;}
+        </style>
+    </head>
+    <body>
+        <p id="p1">This is paragraph 1 - </p>
+        <p id="p2">This is paragraph 2 - </p>
+        <p id="p3">This is paragraph 3 - </p>
+        <p id="p4">This is paragraph 4 - </p>
+        <br>
+        <button id="myButton">click me</button>
+
+        <script>
+            // append:在每個選取的元素的"內部"的"最後方"加入內容
+            // prepend:在每個選取的元素的"內部"的"最前方"加入內容
+            // bofore:在每個選取的元素的"外部"的"前方"加入內容
+            // after:在每個選取的元素的"外部"的"後方"加入內容
+            $('#myButton').click(function () {
+                $('#p1').append('<font color="red">內部最後方:append</font>');
+                $('#p2').prepend('<font color="red">內部最前方:prepend</font>');
+                $('#p3').before('<font color="red">外部前方:bofore</font>');
+                $('#p4').after('<font color="red">外部後方:after</font>');
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            p{background-color: lightyellow;}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <p id="p1"> - p1 - </p>
+            <p id="p2"> - p2 - </p>
+            <p id="p3"> - p3 - </p>
+        </div>
+        <br>
+        <button id="myButton1">bind click to p3</button>
+        <button id="myButton2">unbind click to p3</button>
+        <button id="myButton3">bind jimEvent to p3</button>
+        <button id="myButton4">trigger jimEvent event on p3</button>
+        <button id="myButton5">one time trigger</button>  
+        <script>
+           /* 
+            // hover(handleIn,handleOut)
+            // 當滑鼠移至元素時,觸發handleIn函數
+            // 當滑鼠移出元素時,觸發handleOut函數
+           $('#p1').hover(
+                function () {
+                    $(this).append($('<span>***</span>'));
+                    },
+                function () {
+                    $(this).find($('span:last').remove();
+                }
+            );
+    
+            // handlerIn,handlerOut
+            $('#p2').mouseenter(
+                function () {
+                    $(this).append($('<span>***</span>'));
+                }
+            ).mouseleave(
+                function () {
+                    $(this).find($('span:last').remove();
+                 }
+            );
+            // bind 綁定事件&事件函式
+            
+            $('#myButton1').click(function(){
+                 $('#p3').bind('click', function(){
+                    alert('#p3 was clicked');
+                 });
+            });
+            // unbind 移除事件處理函式
+            $('#myButton2').click(function(){
+                $('#p3').unbind('click');
+                //  $('#p3').unbind();
+            });
+    */
+            // bind 'jimEvent'
+            $('#myButton3').click(function(){
+                $('#p3').bind('jimEvent', function(){
+                    alert('jimEvent occurred!!');
+                });
+            });
+      
+            /*
+            // trigger 觸發事件,自訂名稱的事件,需藉由trigger()函式來觸發
+            $('#myButton4').click(function(){
+                $('#p3').trigger('jimEvent');
+                // $('#p3').trigger('click');
+            });
+     */
+             
+            // one,只會觸發'一次'事件,觸發後自動unbind
+            $('#myButton5').one('click', function(){
+                alert('run only once!');
+            });       
+        </script>
+    </body>
+</html>
